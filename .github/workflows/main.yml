@@ -26,5 +26,5 @@ jobs:
           username: ${{ secrets.DOCKER_ID }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - run: docker build -t joconstantine/react-test -f ./client/Dockerfile.dev ./client
+      - run: docker build -t joconstantine/react-test -f /client/Dockerfile.dev /client
       - run: docker run -e CI=true joconstantine/react-test npm test -- --coverage
