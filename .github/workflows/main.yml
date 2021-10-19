@@ -26,6 +26,7 @@ jobs:
           username: ${{ secrets.DOCKER_ID }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - uses: actions/checkout@v2
       - run: ls
       - run: cd /
       - run: ls
