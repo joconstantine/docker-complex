@@ -29,3 +29,14 @@ jobs:
       - uses: actions/checkout@v2
       - run: docker build -t joconstantine/react-test -f ./client/Dockerfile.dev ./client
       - run: docker run -e CI=true joconstantine/react-test npm test -- --coverage
+      - run: docker build -t joconstantine/multi-client ./client
+      - run: docker build -t joconstantine/multi-nginx ./nginx
+      - run: docker build -t joconstantine/multi-server ./server
+      - run: docker build -t joconstantine/multi-worker ./worker
+      # Log in to the docker CLI
+      - run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+      # Take those images and push them to docker hub
+      - run: docker push joconstantine/multi-client
+      - run: docker push joconstantine/multi-nginx
+      - run: docker push joconstantine/multi-server
+      - run: docker push joconstantine/multi-worker
