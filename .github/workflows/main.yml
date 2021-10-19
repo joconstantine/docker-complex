@@ -33,9 +33,6 @@ jobs:
       - run: docker build -t joconstantine/multi-nginx ./nginx
       - run: docker build -t joconstantine/multi-server ./server
       - run: docker build -t joconstantine/multi-worker ./worker
-      # Log in to the docker CLI
-      - run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-      # Take those images and push them to docker hub
       - run: docker push joconstantine/multi-client
       - run: docker push joconstantine/multi-nginx
       - run: docker push joconstantine/multi-server
