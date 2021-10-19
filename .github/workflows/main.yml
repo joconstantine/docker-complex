@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch: # Put here!!
 
+defaults:
+  run:
+    working-directory: /
+
 jobs:
   docker:
     runs-on: ubuntu-latest
