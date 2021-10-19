@@ -27,6 +27,5 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - uses: actions/checkout@v2
-      - run: ls
-      # - run: docker build -t joconstantine/react-test -f /client/Dockerfile.dev /client
-      # - run: docker run -e CI=true joconstantine/react-test npm test -- --coverage
+      - run: docker build -t joconstantine/react-test -f /client/Dockerfile.dev /client
+      - run: docker run -e CI=true joconstantine/react-test npm test -- --coverage
