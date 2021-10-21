@@ -2,7 +2,7 @@ version: '3'
 services:
   client:
     image: 'thanhtrungtoan/multi-client'
-    mem_limit: 512m
+    mem_limit: 256m
     hostname: client
   server:
     image: 'thanhtrungtoan/multi-server'
@@ -24,6 +24,9 @@ services:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
+    depends_on:
+      - api
+      - client
     image: 'thanhtrungtoan/multi-nginx'
     mem_limit: 128m
     hostname: nginx
