@@ -91,3 +91,4 @@ jobs:
           region: ap-southeast-1
           deployment_package: deploy.zip
           existing_bucket_name: elasticbeanstalk-ap-southeast-1-137338013384/docker
+          version_label: 12345
