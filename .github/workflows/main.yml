@@ -88,6 +88,5 @@ jobs:
           application_name: multi-docker
           environment_name: Multidocker-env
           region: ap-southeast-1
-          deployment_package: docker-compose.yml
           existing_bucket_name: elasticbeanstalk-ap-southeast-1-137338013384
           version_label: 12345
