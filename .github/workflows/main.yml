@@ -80,13 +80,13 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
-      - name: Deploy to EB
-        uses: einaregilsson/beanstalk-deploy@v18
-        with:
-          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: multi-docker
-          environment_name: Multidocker-env
-          region: ap-southeast-1
-          existing_bucket_name: elasticbeanstalk-ap-southeast-1-137338013384
-          version_label: 12345
+      # - name: Deploy to EB
+      #   uses: einaregilsson/beanstalk-deploy@v18
+      #   with:
+      #     aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     application_name: multi-docker
+      #     environment_name: Multidocker-env
+      #     region: ap-southeast-1
+      #     existing_bucket_name: elasticbeanstalk-ap-southeast-1-137338013384
+      #     version_label: 12345
